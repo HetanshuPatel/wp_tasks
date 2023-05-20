@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Print First N Odd Numbers</title>
+  <script>
+    function printOddNumbers() {
+      var n = parseInt(document.getElementById("inputNumber").value);
+      
+      if (isNaN(n) || n <= 0) {
+        alert("Please enter a positive integer greater than zero.");
+        return;
+      }
+      
+      var result = "";
+      for (var i = 1; i <= n; i++) {
+        var oddNumber = 2 * i - 1;
+        result += oddNumber + " ";
+      }
+      
+      document.getElementById("result").textContent = result;
+    }
+  </script>
+</head>
+<body>
+  <h2>Print First N Odd Numbers</h2>
+  <label for="inputNumber">Enter a number:</label>
+  <input type="number" id="inputNumber" min="1" required>
+  <button onclick="printOddNumbers()">Print</button>
+  <p id="result"></p>
+</body>
+</html>

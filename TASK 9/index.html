@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <script>
+    function validateForm() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      if (username.trim() === "" && password.trim() === "") {
+        alert("Username and Password cannot be blank");
+        return false;
+      }
+
+      if (/^[0-9_@#]/.test(username)) {
+        alert("Username cannot start with a digit, '_', '@', or '#'");
+        return false;
+      }
+
+      if (password.length < 8 || password.length > 16) {
+        alert("Password must be between 8 and 16 characters");
+        return false;
+      }
+
+      // Form is valid, can proceed with submission or further processing
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="login-container">
+      <h2>Login</h2>
+      <form onsubmit="return validateForm()">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

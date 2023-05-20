@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Canvas Example</h2>
+  <canvas id="myCanvas" width="400" height="200"></canvas>
+
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const context = canvas.getContext("2d");
+    
+    // Drawing a rectangle
+    context.fillStyle = "red";
+    context.fillRect(50, 50, 200, 100);
+  </script>
+</body>
+</html>

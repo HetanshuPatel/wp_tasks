@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      // Retrieve form data
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var message = document.getElementById("message").value;
+      
+      // Display form data
+      console.log("Name: " + name);
+      console.log("Email: " + email);
+      console.log("Message: " + message);
+      
+      // Clear form fields
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+    }
+  </script>
+</head>
+<body>
+  <h2>Contact Form</h2>
+  <form id="contactForm" onsubmit="handleFormSubmit(event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required><br><br>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" required><br><br>
+    
+    <label for="message">Message:</label>
+    <textarea id="message" rows="4" cols="30" required></textarea><br><br>
+    
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
